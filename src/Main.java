@@ -24,7 +24,9 @@ public class Main {
 
         //readMessage();
 
-        readSingleDigit();
+        //readSingleDigit();
+
+        readNames();
 
     }
 
@@ -121,6 +123,28 @@ public class Main {
             }
         }
     }
+
+    // Exercise 7 - Functions
+    // ----------------------------------------------------------------------
+
+    // Asking user to enter five names, and printing them out.
+    static String[] readNames() {
+        String[] names = new String[5];
+
+        for (int i = 0; i < names.length; i++) {
+            System.out.print((i + 1) + ". Enter a name: ");
+            names[i] = stdin.next();
+        }
+
+        System.out.println("You entered the following names: ");
+        for (String name : names) {
+            System.out.println(" - " + name);
+
+        }
+        return names;
+    };
+
+
 
 
 }
