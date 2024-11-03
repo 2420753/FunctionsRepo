@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -26,7 +27,9 @@ public class Main {
 
         //readSingleDigit();
 
-        readNames();
+        //readNames();
+
+        checkNumbers();
 
     }
 
@@ -143,6 +146,33 @@ public class Main {
         }
         return names;
     };
+
+    // Exercise 8 - Functions
+    // ----------------------------------------------------------------------
+    static int[] checkNumbers() {
+        int[] numbers = {3, 6, 8, 9, 15};
+        int[] newArray = Arrays.copyOf(numbers, numbers.length + 1);
+        System.out.print("Enter a value you want to search for: ");
+        int matchValue = stdin.nextInt();
+        //int matchValue = 5;
+
+        newArray[numbers.length] = numbers.length;
+
+        System.out.println("You entered the following numbers: " + Arrays.toString(newArray));
+
+
+        for (int i = 0; i < newArray.length; i++) {
+            if (newArray[i] == matchValue) {
+                System.out.println("You have found the match value: " + matchValue + "\nAt index: " + i);
+            }
+        }
+        return newArray;
+
+
+    };
+
+
+
 
 
 
